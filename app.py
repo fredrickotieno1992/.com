@@ -59,7 +59,7 @@ with st.container():
             """
         )
     with right_column:
-        st_lottie(lottie_coding, height=500, key="coding")
+        st_lottie(lottie_coding, height=600, key="coding")
 
 # ---- PROJECTS ----
 with st.container():
