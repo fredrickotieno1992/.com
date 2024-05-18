@@ -82,11 +82,11 @@ with st.container():
     with image_column:
         st.image(img_contact_form)
     with text_column:
-        st.subheader("How To Add A Contact Form To Your Streamlit App")
+        st.subheader("More will be shown when contacted")
         st.write(
             """
-            Want to add a contact form to your Streamlit website?
-            In this video, I'm going to show you how to implement a contact form in your Streamlit app using the free service 'Form Submit'.
+            To be added?
+            I have several projects that can help your company or oganization realise its goals and objectives,the contact form is provided at the bottom of the page'.
             """
         )
 
