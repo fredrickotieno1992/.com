@@ -3,8 +3,6 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
 
-/*    /index.html   200
-
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="My Webpage", page_icon="🌍", layout="wide")
 
@@ -20,13 +18,12 @@ def local_css(file_name):
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
-#https://lottiefiles.com/animations/data-dashboard-FgLjuR4Zmq?from=search
-#ttps://assets5.lottiefiles.com/packages/lf20_jcikwtux.json
+
 # ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://lottie.host/27f376b2-adf3-4e4d-9c83-36727cf8bf95/iHTboRmxTQ.json")
+lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_jcikwtux.json")
 img_lottie_animation = Image.open("project.png")
 img_contact_form = Image.open("fred.png")
-#https://cdnl.iconscout.com/lottie/premium/thumb/ellipse-shape-6743749-5601892.mp4
+
 # ---- HEADER SECTION ----
 with st.container():
     st.subheader("Hi, I am Fredrick :wave:")
