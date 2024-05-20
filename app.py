@@ -9,7 +9,7 @@ from streamlit_geolocation import streamlit_geolocation
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 location = streamlit_geolocation()
 if location and location['latitude'] is not None and location['longitude'] is not None:
-    st.write(f"Your location: Latitude {location['latitude']}, Longitude {location['longitude']}")
+    st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
 else:
     st.write("Please click the button to share your location.")
