@@ -13,13 +13,16 @@ st.markdown(
     """
     <style>
     .home-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
         display: inline-block;
         padding: 10px 20px;
-        background-color: pink;
+        background-color: brown;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        margin-bottom: 20px;
+        z-index: 1; /* Ensure the button is above other content */
     }
     </style>
     """
