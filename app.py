@@ -82,7 +82,7 @@ with st.container():
             """
         )
 with st.container():
-    text_column, image_column = st.columns((1.75, 0.9))
+    text_column, image_column = st.columns((1.75, 0.92))
     with image_column:
         st.image(img_contact_form)
     with text_column:
