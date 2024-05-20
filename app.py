@@ -85,7 +85,7 @@ with st.container():
         st.write(
             """
             Recommend the best for your customers.
-            I have several projects that can help your company or oganization realise its goals and objectives.The contact form is provided at the bottom of the page'.
+            I have expreience in building and deploying recommender systems that can help your company or oganization realise its goals and objectives.The contact form is provided at the bottom of the page'.
             """
         )
 
