@@ -27,6 +27,7 @@ st.markdown(
 )
 
 st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
+#location
 location = streamlit_geolocation()
 if location and location['latitude'] is not None and location['longitude'] is not None:
     st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
