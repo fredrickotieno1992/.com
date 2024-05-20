@@ -134,7 +134,8 @@ with st.container():
     st.header("Get In Touch With Me!")
     st.write("##")
 
-    # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
+  
+    # Contact form
     contact_form = """
     <form action="https://formsubmit.co/cc2b563a270fb267e9cfffb8163cbf4d" method="POST">
     <input type="hidden" name="_captcha" value="false">
@@ -142,7 +143,7 @@ with st.container():
     <input type="email" name="email" placeholder="Your email" required>
     <textarea name="message" placeholder="Your message here" required></textarea>
     <button type="submit">Send</button>
-</form>
+    </form>
     """
     left_column, right_column = st.columns(2)
     with left_column:
