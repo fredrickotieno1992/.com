@@ -13,13 +13,16 @@ st.markdown(
     """
     <style>
     .home-button {
+        position: fixed;
+        top: 10px;
+        right: 10px;
         display: inline-block;
         padding: 10px 20px;
-        background-color: #007bff;
+        background-color: brown;
         color: white;
         text-decoration: none;
         border-radius: 5px;
-        margin-bottom: 20px;
+        z-index: 1; /* Ensure the button is above other content */
     }
     </style>
     """
@@ -27,6 +30,8 @@ st.markdown(
 )
 
 st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
+
+
 #location
 location = streamlit_geolocation()
 if location and location['latitude'] is not None and location['longitude'] is not None:
