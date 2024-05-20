@@ -22,7 +22,7 @@ local_css("style/style.css")
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://lottie.host/52d10e39-fd41-4515-981c-1646df08a2a8/FrJzpFHSe4.json")
 img_lottie_animation = Image.open("project.png")
-img_contact_form = Image.open("fred.png")
+img_contact_form = Image.open("rec.png")
 logo = Image.open("logo.png") 
 
 # ---- HEADER SECTION ----
