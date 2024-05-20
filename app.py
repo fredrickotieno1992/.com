@@ -52,7 +52,7 @@ st.markdown(
     , unsafe_allow_html=True
 )
 
-if location and location['latitude'] is not None and location['longitude'] is not None:
+if location and 'latitude' in location and 'longitude' in location:
     st.markdown(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}", unsafe_allow_html=True, className="top-right")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
 else:
