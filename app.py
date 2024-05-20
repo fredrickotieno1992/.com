@@ -35,23 +35,6 @@ st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
 location = streamlit_geolocation()
 
 # Position location information at the top right corner
-st.markdown(
-    """
-    <style>
-    .top-right {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background-color: #f8f9fa;
-        padding: 10px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    </style>
-    """
-    , unsafe_allow_html=True
-)
-
 if location and location['latitude'] is not None and location['longitude'] is not None:
     st.markdown(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}", unsafe_allow_html=True, className="top-right")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
