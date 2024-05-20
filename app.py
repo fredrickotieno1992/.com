@@ -4,7 +4,7 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="My Webpage", page_icon="🌍", layout="wide")
+st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 
 def load_lottieurl(url):
     r = requests.get(url)
