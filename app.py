@@ -31,7 +31,7 @@ with st.container():
     with col1:
         st.image(logo, width=250)  # Adjust the width as needed
     with col2:
-        st.subheader("Hi, I am Fredrick :wave:")
+        st.subheader("Hi, I am Fredrick Nyangácha 🧑‍💼")
         st.title("A Data Analyst/Monitoring,Evaluation and Learning  Officer")
     st.write(
         "I am a data-driven professional with expertise in data analysis, monitoring, evaluation, and learning. My skills include:\n"
