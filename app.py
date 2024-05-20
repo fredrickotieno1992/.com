@@ -15,7 +15,7 @@ st.markdown(
     .home-button {
         display: inline-block;
         padding: 10px 20px;
-        background-color: #007bff;
+        background-color: pink;
         color: white;
         text-decoration: none;
         border-radius: 5px;
