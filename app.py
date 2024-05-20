@@ -12,7 +12,7 @@ if location and location['latitude'] is not None and location['longitude'] is no
     st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
 else:
-    st.write("Please click the button to share your location.")
+    st.write("Please click the button to share with me your location.")
 
 def load_lottieurl(url):
     r = requests.get(url)
