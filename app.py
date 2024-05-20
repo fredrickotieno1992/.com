@@ -81,11 +81,11 @@ with st.container():
     with image_column:
         st.image(img_contact_form)
     with text_column:
-        st.subheader("More will be shown when contacted")
+        st.subheader("Fully functional Recommennder Systems")
         st.write(
             """
-            To be added?
-            I have several projects that can help your company or oganization realise its goals and objectives,the contact form is provided at the bottom of the page'.
+            Recommend the best for your customers.
+            I have several projects that can help your company or oganization realise its goals and objectives.The contact form is provided at the bottom of the page'.
             """
         )
 
