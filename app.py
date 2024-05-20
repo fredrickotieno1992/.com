@@ -23,11 +23,16 @@ local_css("style/style.css")
 lottie_coding = load_lottieurl("https://lottie.host/52d10e39-fd41-4515-981c-1646df08a2a8/FrJzpFHSe4.json")
 img_lottie_animation = Image.open("project.png")
 img_contact_form = Image.open("fred.png")
+logo = Image.open("logo.png") 
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("Hi, I am Fredrick :wave:")
-    st.title("A Data Analyst/Monitoring,Evaluation and Learning  Officer")
+    col1, col2 = st.columns([0.5, 1.5])
+    with col1:
+        st.image(logo, width=250)  # Adjust the width as needed
+    with col2:
+        st.subheader("Hi, I am Fredrick :wave:")
+        st.title("A Data Analyst/Monitoring,Evaluation and Learning  Officer")
     st.write(
         "I am a data-driven professional with expertise in data analysis, monitoring, evaluation, and learning. My skills include:\n"
         "- Proficient in Python, SQL, and data visualization tools like Tableau\n"
