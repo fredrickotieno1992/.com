@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
@@ -7,7 +8,11 @@ from streamlit_geolocation import streamlit_geolocation
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 location = streamlit_geolocation()
-
+if location and location['latitude'] is not None and location['longitude'] is not None:
+    st.write(f"Your location: Latitude {location['latitude']}, Longitude {location['longitude']}")
+    st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
+else:
+    st.write("Please click the button to share your location.")
 
 def load_lottieurl(url):
     r = requests.get(url)
