@@ -7,6 +7,26 @@ from streamlit_geolocation import streamlit_geolocation
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
+
+# ---- HOME BUTTON ----
+st.markdown(
+    """
+    <style>
+    .home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """
+    , unsafe_allow_html=True
+)
+
+st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
 location = streamlit_geolocation()
 if location and location['latitude'] is not None and location['longitude'] is not None:
     st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
@@ -51,26 +71,6 @@ with st.container():
         "- Strong problem-solving and critical thinking abilities to tackle complex data challenges\n"
         "I am passionate about leveraging data to drive informed decision-making and improve organizational performance. My goal is to contribute to data-driven solutions that create positive change."
     )
-
-# ---- HOME BUTTON ----
-st.markdown(
-    """
-    <style>
-    .home-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-    </style>
-    """
-    , unsafe_allow_html=True
-)
-
-st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
 
 # ---- WHAT I DO ----
 with st.container():
