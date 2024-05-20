@@ -1,11 +1,4 @@
-import streamlit as st
-import pandas as pd
-import requests
-from streamlit_lottie import st_lottie
-from PIL import Image
-from streamlit_geolocation import streamlit_geolocation
-
-# Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
+# Set page configuration
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 
 # ---- HOME BUTTON ----
@@ -31,39 +24,38 @@ st.markdown(
 
 st.markdown('<a href="/" class="home-button">Home</a>', unsafe_allow_html=True)
 
-
-#location
+# Get location information
 location = streamlit_geolocation()
-if location and location['latitude'] is not None and location['longitude'] is not None:
-    st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
+
+# Position location information at the top right corner
+st.markdown(
+    """
+    <style>
+    .top-right {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+    """
+    , unsafe_allow_html=True
+)
+
+if location and 'latitude' in location and 'longitude' in location:
+    st.markdown(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}", unsafe_allow_html=True, className="top-right")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
 else:
     st.write("Please click the button to share with me your location.")
-
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
-
-# Use local CSS
-def local_css(file_name):
-    with open(file_name) as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-local_css("style/style.css")
-
-# ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://lottie.host/52d10e39-fd41-4515-981c-1646df08a2a8/FrJzpFHSe4.json")
-img_lottie_animation = Image.open("project.png")
-img_contact_form = Image.open("best.png")
-logo = Image.open("logo.png") 
 
 # ---- HEADER SECTION ----
 with st.container():
     col1, col2 = st.columns([0.5, 1.5])
     with col1:
-        st.image(logo, width=250)  # Adjust the width as needed
+        st.image("logo.png", width=250)  # Adjust the width as needed
     with col2:
         st.subheader("Hi, I am Fredrick Nyangácha 🧑‍💼")
         st.title("A Data Analyst/Monitoring,Evaluation and Learning  Officer")
@@ -93,11 +85,11 @@ with st.container():
             - Developing and implementing Monitoring, Evaluation, and Learning (MEL) frameworks for programs and interventions, ensuring that MEL processes are embedded in program design.
             - Conducting data analysis to track project progress, identify trends, assess performance against targets and indicators, and improve data collection, reporting, analysis, and visualization."
 
-            If this sounds interesting to you,you can contact me using the contact form provided at the bottom of the page.
+            If this sounds interesting to you, you can contact me using the contact form provided at the bottom of the page.
             """
         )
     with right_column:
-        st_lottie(lottie_coding, height=600, key="coding")
+        st.image("project.png")
 
 # ---- PROJECTS ----
 with st.container():
@@ -106,25 +98,25 @@ with st.container():
     st.write("##")
     image_column, text_column = st.columns((2, 1))
     with image_column:
-        st.image(img_lottie_animation)
+        st.image("project.png")
     with text_column:
         st.subheader("Monitor Your KPIs in Real Time")
         st.write(
             """
-            Build a dashboard that track your KPI targets in real time!
-            Sharable dashboard that shows where you are from reaching your targets,it is fun and shows in real time
+            Build a dashboard that tracks your KPI targets in real time!
+            A shareable dashboard that shows your progress towards your targets in real time.
             """
         )
 with st.container():
     text_column, image_column = st.columns((1.75, 0.92))
     with image_column:
-        st.image(img_contact_form)
+        st.image("best.png")
     with text_column:
-        st.subheader("Fully functional Recommennder Systems")
+        st.subheader("Fully functional Recommender Systems")
         st.write(
             """
             Recommend the best for your customers.
-            I have expreience in building and deploying recommender systems that can help your company or oganization realise its goals and objectives.The contact form is provided at the bottom of the page'.
+            I have experience in building and deploying recommender systems that can help your company or organization realize its goals and objectives. The contact form is provided at the bottom of the page.
             """
         )
 
@@ -134,19 +126,15 @@ with st.container():
     st.header("Get In Touch With Me!")
     st.write("##")
 
-  
     # Contact form
-    contact_form = """
-    <form action="https://formsubmit.co/cc2b563a270fb267e9cfffb8163cbf4d" method="POST">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="name" placeholder="Your name" required>
-    <input type="email" name="email" placeholder="Your email" required>
-    <textarea name="message" placeholder="Your message here" required></textarea>
-    <button type="submit">Send</button>
-    </form>
-    """
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.markdown(contact_form, unsafe_allow_html=True)
-    with right_column:
-        st.empty()
+    name = st.text_input("Your name", max_chars=50)
+    email = st.text_input("Your email", max_chars=50)
+    message = st.text_area("Your message", max_chars=500)
+    submitted = st.button("Send")
+
+    if submitted:
+        if name and email and message:
+            # Handle form submission here (e.g., send email, store in database)
+            st.success("Message sent successfully!")
+        else:
+            st.error("Please fill out all fields before sending.")
