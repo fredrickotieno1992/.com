@@ -2,9 +2,12 @@ import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
+from streamlit_geolocation import streamlit_geolocation
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
+location = streamlit_geolocation()
+
 
 def load_lottieurl(url):
     r = requests.get(url)
