@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_geolocation import streamlit_geolocation
+import pandas as pd
 
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 
