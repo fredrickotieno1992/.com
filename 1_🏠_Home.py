@@ -1,4 +1,4 @@
-import streamlit as s
+import streamlit as st
 import pandas as pd
 import requests
 from streamlit_lottie import st_lottie
