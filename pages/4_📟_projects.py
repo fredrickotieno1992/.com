@@ -22,7 +22,7 @@ chun = Image.open("churn.png")
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
-    st.write("These are some of the projects I have worked on")
+    st.subheader("Performance dashboard")
     st.write("##")
     image_column, text_column = st.columns((2, 1))
     with image_column:
@@ -35,17 +35,20 @@ with st.container():
             Sharable dashboard that shows you where you are from reaching your targets,it is interactive and shows in real time
             """
         )
+        st.write("For more information,visit.https://dashboard-evidenceaction.streamlit.app/")
 
 
 
 
 
 with st.container():
+    st.write("---")
+    st.subheader("Recommender")
     image_column, text_column = st.columns((2, 1))
     with image_column:
         st.image(img_contact_form)
     with text_column:
-        st.subheader("Fully functional recommender Systems")
+        st.subheader("Fully built and deployed recommender Systems")
         st.write(
             """
             I build fully functional recommender systems the can help customers choose their best products'.
@@ -53,11 +56,13 @@ with st.container():
         )
 
 with st.container():
+    st.write("---")
+    st.subheader("Cross Tabulation")
     image_column, text_column = st.columns((2, 1))
     with image_column:
         st.image(log)
     with text_column:
-        st.subheader("Cloud based data collection with cross tabs")
+        st.subheader("Cloud based data collection systems with automatic cross tabs")
         st.write(
             """
             I have built user friendly data collection forms with automatic cross tabs'.
@@ -65,13 +70,17 @@ with st.container():
         )
 
 with st.container():
+    st.write("---")
+    st.subheader("Churn Prediction")
     image_column, text_column = st.columns((2, 1))
     with image_column:
         st.image(chun)
     with text_column:
-        st.subheader("Fully functional customer churn models")
+        st.subheader("Fully deployed customer churn models")
         st.write(
             """
             I build fully functional customer churn models.This can help in reduction of the number of customers leaving the organization.
             """
         )
+with st.container():
+    st.write("---")
