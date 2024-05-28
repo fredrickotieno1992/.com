@@ -3,12 +3,18 @@ from streamlit_geolocation import streamlit_geolocation
 
 st.set_page_config(page_title="fredrick nyangacha", page_icon="🌍", layout="wide")
 
+with st.container():
+    st.write("---")
+    st.subheader("Click on the button to get the latitude and longitude")
 location = streamlit_geolocation()
 if location and location['latitude'] is not None and location['longitude'] is not None:
     st.write(f"My location: Latitude {location['latitude']}, Longitude {location['longitude']}")
     st.map(pd.DataFrame({'lat': [location['latitude']], 'lon': [location['longitude']]}), zoom=12)
 else:
     st.write("If you require my physical presence, please click the button to share your location with me.")
+
+with st.container():
+    st.write("---")
 st.subheader("Call me or send me mail on;")
 st.write("📞: 0701884577")
 st.write("📩: otienofredrickn@gmail.com")
@@ -42,3 +48,5 @@ with st.container():
         st.markdown(contact_form, unsafe_allow_html=True)
     with right_column:
         st.empty()
+with st.container():
+    st.write("---")
