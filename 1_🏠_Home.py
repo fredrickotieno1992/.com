@@ -22,12 +22,14 @@ def local_css(file_name):
 local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
+lottie_coding = load_lottieurl("https://lottie.host/52d10e39-fd41-4515-981c-1646df08a2a8/FrJzpFHSe4.json")
 img_lottie_animation = Image.open("project.png")
 img_contact_form = Image.open("best.png")
 logo = Image.open("fred.png") 
 
 # ---- HEADER SECTION ----
 with st.container():
+    st.write("---")
     col1, col2 = st.columns([0.5, 1.5])
     with col1:
         st.image(logo, width=150)  # Adjust the width as needed
@@ -63,3 +65,9 @@ with st.container():
             If this sounds interesting to you,you can contact me using the contact form provided at the bottom of the page.
             """
         )
+    with right_column:
+        st_lottie(lottie_coding, height=600, key="coding")
+
+with st.container():
+    st.write("---")
+    st.write("If this sounds interesting to you,you can contact me using the phone number or the mail provided on the contact page.You can as well share with me your location using the form provided on the contact page if I am needed phisically.")
